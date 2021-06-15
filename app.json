@@ -1,0 +1,30 @@
+{
+  "name": "wallet-connect-relay-heroku",
+  "env": {
+    "REDIS_URL": {
+      "required": false
+    },
+    "REDISCLOUD_URL": {
+      "required": false
+    },
+    "NB_INSTANCES": {
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    {
+      "plan": "rediscloud:100"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-20"
+}
