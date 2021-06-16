@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "yarn --cwd 'walletconnect-monorepo/servers/relay' install --production=false",
     "build": "yarn --cwd 'walletconnect-monorepo/servers/relay' build",
-    "start": "pm2 start walletconnect-monorepo/servers/relay/dist"
+    "start": "pm2-runtime start ecosystem.config.js --env production"
   },
   "dependencies": {
     "pm2": "^5.1.0"
