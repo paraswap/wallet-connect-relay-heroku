@@ -6,7 +6,7 @@
       "required": false
     },
     "REDISCLOUD_URL": {
-      "required": "false"
+      "required": false
     },
     "NB_INSTANCES": {
       "required": false
