@@ -3,7 +3,13 @@
   "repository": "https://github.com/paraswap/paraswap-wc-bridge",
   "env": {
     "REDIS_URL": {
-      "required": true
+      "required": false
+    },
+    "REDISCLOUD_URL": {
+      "required": "false"
+    },
+    "NB_INSTANCES": {
+      "required": false
     }
   },
   "formation": {
