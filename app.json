@@ -1,0 +1,25 @@
+{
+  "name": "paraswap-wc-bridge",
+  "repository": "https://github.com/paraswap/paraswap-wc-bridge",
+  "env": {
+    "REDIS_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    {
+      "plan": "rediscloud:100"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-20"
+}
