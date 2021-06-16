@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "(cd walletconnect-monorepo/servers/relay && yarn install --production=false)",
     "build": "(cd walletconnect-monorepo/servers/relay && yarn build)",
-    "start": "pm2 start walletconnect-monorepo/servers/relay/dist"
+    "start": "export REDIS_URL=$REDISCLOUD_URL; pm2 start walletconnect-monorepo/servers/relay/dist"
   },
   "dependencies": {
     "pm2": "^5.1.0"
