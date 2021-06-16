@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "postinstall": "(cd walletconnect-monorepo/servers/relay && yarn install --production=false)",
-    "build": "(cd walletconnect-monorepo/servers/relay && yarn build)",
-    "start": "export REDIS_URL=$REDISCLOUD_URL; pm2 start walletconnect-monorepo/servers/relay/dist"
+    "postinstall": "yarn --cwd 'walletconnect-monorepo/servers/relay' install --production=false",
+    "build": "yarn --cwd 'walletconnect-monorepo/servers/relay' build",
+    "start": "pm2 start walletconnect-monorepo/servers/relay/dist"
   },
   "dependencies": {
     "pm2": "^5.1.0"
