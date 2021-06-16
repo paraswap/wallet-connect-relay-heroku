@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-	"build": "./build.sh",
-	"start": "./start.sh"
+    "postinstall": "(cd walletconnect-monorepo/servers/relay && yarn install)",
+    "build": "(cd walletconnect-monorepo/servers/relay && yarn build)",
+    "start": "pm2 start walletconnect-monorepo/servers/relay/dist"
+  },
+  "dependencies": {
+    "pm2": "^5.1.0"
   }
 }
