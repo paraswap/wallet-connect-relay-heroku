@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "postinstall": "(cd walletconnect-monorepo/servers/relay && yarn install)",
+    "postinstall": "(cd walletconnect-monorepo/servers/relay && yarn install --production=false)",
     "build": "(cd walletconnect-monorepo/servers/relay && yarn build)",
     "start": "pm2 start walletconnect-monorepo/servers/relay/dist"
   },
