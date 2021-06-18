@@ -4,7 +4,7 @@
 This project is meant to simplify deployment of a wallet connect bridge on Heroku.
 
 
-- Emded original wallet connect monorepo as git submodule
+- Emded original [wallet connect monorepo](https://github.com/WalletConnect/walletconnect-monorepo) as a git submodule
 - Define an Heroku mini config through App.json
 - Runs node through PM2
 
