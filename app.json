@@ -18,7 +18,7 @@
   },
   "addons": [
     {
-      "plan": "rediscloud:100"
+      "plan": "rediscloud:30"
     }
   ],
   "buildpacks": [
