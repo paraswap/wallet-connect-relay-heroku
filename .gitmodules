@@ -1,3 +1,0 @@
-[submodule "walletconnect-monorepo"]
-	path = walletconnect-monorepo
-	url = https://github.com/WalletConnect/walletconnect-monorepo.git
