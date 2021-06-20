@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "preinstall": "[ ! -d 'walletconnect-monorepo/servers/relay' ] && git clone https://github.com/WalletConnect/walletconnect-monorepo.git || exit 0",
+    "preinstall": "[ ! -d 'walletconnect-monorepo' ] && git clone https://github.com/WalletConnect/walletconnect-monorepo.git || exit 0",
     "postinstall": "yarn --cwd 'walletconnect-monorepo/servers/relay' install --production=false",
     "build": "yarn --cwd 'walletconnect-monorepo/servers/relay' build",
     "start": "pm2-runtime start ecosystem.config.js --env production"
