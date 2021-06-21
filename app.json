@@ -24,6 +24,9 @@
   "buildpacks": [
     {
       "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/dmathieu/heroku-buildpack-submodules"
     }
   ],
   "stack": "heroku-20"
