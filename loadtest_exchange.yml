@@ -1,0 +1,25 @@
+config:
+  # target: "wss://paraswap.bridge.walletconnect.org/"
+  target: "ws://localhost:5555"
+  phases:
+    - duration: 60  # Test for 60 seconds
+      arrivalRate: 50 # Every second, add 50 users
+      rampTo: 300 # And ramp it up to 300 users in total over the 60s period
+      name: "Ramping up the load"
+  processor: "./stress_load/functions.js"
+scenarios:
+  - engine: "ws"
+    flow:
+
+      - function: "assignUserInfo"
+
+      - function: "getNextMessage"
+
+      - loop:
+        - think: 2
+        - send: "{{message}}"
+        - function: "getNextMessage"
+        # while there are messages
+        whileTrue: "shouldContinue"
+
+      - think: 5 # Every connection will remain open for 5s
