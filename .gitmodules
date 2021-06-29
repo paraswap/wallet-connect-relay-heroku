@@ -1,5 +1,5 @@
 [submodule "walletconnect-monorepo"]
 	path = walletconnect-monorepo
 	url = https://github.com/paraswap/walletconnect-monorepo.git
-	branch = feat/multi_instance
+	branch = feat/more_channels
 	
