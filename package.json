@@ -7,9 +7,14 @@
     "preinstall": "[ ! -d 'walletconnect-monorepo/servers/relay' ] && git init && git submodule update --init --recursive --force || exit 0",
     "postinstall": "yarn --cwd 'walletconnect-monorepo/servers/relay' install --production=false",
     "build": "yarn --cwd 'walletconnect-monorepo/servers/relay' build",
-    "start": "pm2-runtime start ecosystem.config.js --env production"
+    "start": "pm2-runtime start ecosystem.config.js --env production",
+    "bench": "artillery run loadtest_exchange.yml"
   },
   "dependencies": {
     "pm2": "^5.1.0"
+  },
+  "devDependencies": {
+    "artillery": "^1.7.4",
+    "enc-utils": "^3.0.0"
   }
 }
