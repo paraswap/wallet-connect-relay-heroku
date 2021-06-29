@@ -43,7 +43,7 @@ const generateConnectionMessages = () => {
 
  function * generateDAPPSendTxMessages () {
    // publish to topic 3
-   yiled ({...pub3, payload: SEND_TX_PAYLOAD})
+   yield ({...pub3, payload: SEND_TX_PAYLOAD})
 
    // in response to Confirm TX from wallet
    yield ack2
@@ -60,7 +60,7 @@ const generateConnectionMessages = () => {
  const DAPConnectionGen = generateDAPPConnectionMessages()
  const WalletConnectionGen = generateWalletConnectionMessages()
  const DAPPTxGen = generateDAPPSendTxMessages()
- const WalletTxGen = generateDAPPSendTxMessages()
+ const WalletTxGen = generateWalletSendTxMessages()
 
  let dappGenS = [DAPConnectionGen, DAPPTxGen]
  let walletGenS = [WalletConnectionGen, WalletTxGen]
@@ -72,8 +72,8 @@ const generateConnectionMessages = () => {
     if (!message) return null
 
     if (message.done) {
-      if (isDapp) dappGenS.pop()
-      else walletGenS.pop()
+      if (isDapp) dappGenS.shift()
+      else walletGenS.shift()
     }
 
     return message.value
